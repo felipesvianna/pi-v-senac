@@ -11,7 +11,7 @@ Abaixo estão duas sugestões de setup deste projeto:
 - Sugestão 1: Extrair ou clonar o código deste projeto em um servidor web (pré-requisito por conta do uso do Javascript no tipo "module").
 
 ```
-git clone https://github.com/Ec0n0m1st/PROJETO-INTEGRADOR.git
+[git clone https://github.com/Ec0n0m1st/PROJETO-INTEGRADOR.git](https://github.com/felipesvianna/pi-v-senac)
 ```
 
 - Sugestão 2: Abrir o projeto com o editor [Visual Studio Code](https://code.visualstudio.com) e utilizar a extensão [ritwickdey.LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
