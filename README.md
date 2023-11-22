@@ -25,7 +25,7 @@ git clone https://github.com/Ec0n0m1st/PROJETO-INTEGRADOR.git
 
 Este software está dividido em 3 camadas: view (diretório raiz), controladores (diretorio js) e dados (arquivo js/data.js).
 
-## Integrantes:
+## Integrantes
 
 Felipe Silva Vianna da Silva <br>
 Patrick Massi de Souza <br>
