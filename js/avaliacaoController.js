@@ -82,10 +82,6 @@ const registrarAvaliacao = (idEmpreendimento, idCategoria, avaliacoes) => {
   });
 
   arrAvaliacoes.push(...novasAvaliacoes);
-  //dadosAvaliacao.push(...novasAvaliacoes);
-
-  // console.log("dadosAvaliacao: ", dadosAvaliacao);
-  // console.log("arrAvaliacoes: ", arrAvaliacoes);
 
   database.salvarAlteracoesEntidade("avaliacao", arrAvaliacoes);
 };
