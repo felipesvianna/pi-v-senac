@@ -16,12 +16,14 @@ git clone https://github.com/Ec0n0m1st/PROJETO-INTEGRADOR.git
 
 - Sugestão 2: Abrir o projeto com o editor [Visual Studio Code](https://code.visualstudio.com) e utilizar a extensão [ritwickdey.LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
-## Desenvolvimento e Tecnologias utilizadas
+## Desenvolvimento e tecnologias utilizadas
 
 - HTML
 - CSS
 - Javascript
 - JSON
+
+Este software está dividido em 3 camadas: view (diretório raiz), controladores (diretorio js) e dados (arquivo js/data.js).
 
 ## Integrantes:
 
