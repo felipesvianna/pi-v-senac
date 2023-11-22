@@ -8,7 +8,7 @@ Esta aplicação está utilizando um arquivo JSON no diretorio /database como ba
 
 Abaixo estão duas sugestões de setup deste projeto:
 
-- Sugestão 1: Extrair ou clonar o código deste projeto em um servidor web.
+- Sugestão 1: Extrair ou clonar o código deste projeto em um servidor web (pré-requisito por conta do uso do Javascript no tipo "module").
 
 ```
 git clone https://github.com/Ec0n0m1st/PROJETO-INTEGRADOR.git
