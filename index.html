@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/stylepages.css" />
+    <title>Certificação AQUA-HQE</title>
+  </head>
+  <body class="container">
+    <header class="header">
+      <div class="logo">
+        <a href="index.html" style="text-decoration: none">
+          <h1 class="logo-font">LOGO</h1>
+        </a>
+      </div>
+    </header>
+    <section class="section">
+      <p class="section-text">Selecione o empreendimento</p>
+      <div>
+        <select class="select-empreendimento" id="select-empreendimento">
+          <option selected="selected" class="option-font">-------------</option>
+        </select>
+      </div>
+      <a id="link-acessar" class="link-button sair-font" href="categorias.html"
+        >Acessar</a
+      >
+    </section>
+    <footer class="footer">
+      <p class="footer-font">Projeto Integrador - Grupo 34</p>
+    </footer>
+  </body>
+</html>
+
+<script type="module">
+  import empreendimento from "./js/empreendimentoController.js";
+  import avaliacao from "./js/avaliacaoController.js";
+  import database from "./js/data.js";
+
+  await database.carregarBanco();
+
+  const selectElement = document.getElementById("select-empreendimento");
+  const linkElement = document.getElementById("link-acessar");
+
+  const options = empreendimento.carregarEmpreendimentos();
+
+  options.forEach((option) => {
+    const newOption = document.createElement("option");
+    newOption.classList.add("option-font");
+    newOption.value = option.id;
+    newOption.textContent = option.nome;
+
+    selectElement.appendChild(newOption);
+  });
+
+  selectElement.addEventListener("change", (event) => {
+    const value = event.target.value;
+    const updatedHref = linkElement.href + "?idEmpreendimento=" + value;
+    linkElement.href = updatedHref;
+  });
+</script>

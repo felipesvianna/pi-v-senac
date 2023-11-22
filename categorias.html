@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/stylepages.css" />
+    <title>Certificação AQUA-HQE</title>
+  </head>
+  <body class="container">
+    <header class="header">
+      <div class="logo">
+        <a href="index.html" style="text-decoration: none">
+          <h1 class="logo-font">LOGO</h1>
+        </a>
+      </div>
+      <p class="header-text">Empreendimentos</p>
+      <div class="sair">
+        <a class="sair-font link-button-header" href="index.html">Sair</a>
+      </div>
+    </header>
+    <section class="section-categorie">
+      <div class="text-categorie">
+        <p>Selecione a categoria</p>
+      </div>
+      <div class="categories">
+        <a class="categorie footer-font" href="avaliacao.html?idCategoria=1"
+          >Categoria 1:Edifício e seu entorno</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html">
+          Categoria 2: Produtos, sistemas e processos construtivos
+        </a>
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 3: Canteiro de obras</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 4: Energia</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 5: Água</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 6: Resíduos</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 7: Manutenção</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 8: Conforto higrotérmico</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 9: Conforto acústico</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 10: Conforto visual</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 11: Conforto olfativo</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 12: Qualidade dos espaços</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 13:Qualidade do ar</a
+        >
+        <a class="categorie footer-font" href="emconstrucao.html"
+          >Categoria 14: Qualidade da água</a
+        >
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="footer-font">Projeto Integrador - Grupo 34</p>
+    </footer>
+  </body>
+</html>
+
+<script type="module">
+  const searchParams = new URLSearchParams(window.location.search);
+  const idEmpreendimento = parseInt(searchParams.get("idEmpreendimento"));
+
+  const anchorTags = document.querySelectorAll("a");
+
+  anchorTags.forEach((anchorTag) => {
+    let newHref;
+    const currentHref = anchorTag.href;
+    const hasExistingAttributes = currentHref.includes("?");
+    const appendString = "idEmpreendimento=" + idEmpreendimento;
+
+    if (!hasExistingAttributes) {
+      newHref = currentHref + "?" + appendString;
+    } else {
+      newHref = currentHref + "&" + appendString;
+    }
+
+    anchorTag.href = newHref;
+  });
+</script>

@@ -1,0 +1,43 @@
+{
+    "usuarios": [
+      {"id": 1, "Nome": "João Silva", "titulo_cargo": "Gerente"},
+      {"id": 2, "Nome": "Maria Oliveira", "titulo_cargo": "Engenheira"},
+      {"id": 3, "Nome": "Carlos Rocha", "titulo_cargo": "Arquiteto"}
+    ],
+    "usuarios_empreendimentos": [
+      {"id": 1, "usuario_id": 1, "empreendimento_id": 1},
+      {"id": 2, "usuario_id": 2, "empreendimento_id": 1},
+      {"id": 3, "usuario_id": 3, "empreendimento_id": 2}
+    ],
+    "empreendimentos": [
+      {"id": 1, "nome": "Projeto A - Construção Verde", "data_inicio": "2023-01-01", "data_fim": "2023-12-31"},
+      {"id": 2, "nome": "Projeto B - Contrução Azul", "data_inicio": "2023-02-01", "data_fim": "2023-11-30"}
+    ],
+    "avaliacao": [
+      {"id": 1, "empreendimento_id": 1, "categorias_analise_id": 1, "criterio_id": 1, "resultado_numerico": 2, "resultado_char": null, "data_avaliacao": "2023-06-15"},
+      {"id": 2, "empreendimento_id": 1, "categorias_analise_id": 1, "criterio_id": 2, "resultado_numerico": null, "resultado_char": "B", "data_avaliacao": "2023-06-15"}
+    ],
+    "criterios": [
+      {"id": 1, "categorias_analise_id": 1, "tipo_analise_id": 1, "nivel": "B", "pontos": null, "descricao": "Realizar uma análise das vantagens e limitações do local do empreendimento antes do estudo de projeto."},
+      {"id": 2, "categorias_analise_id": 1, "tipo_analise_id": 1, "nivel": null, "pontos": 2, "descricao": "Realizar um estudo específico com o objetivo de identificar a situação inicial de insolação e luminosidade para a vizinhança."},
+      {"id": 3, "categorias_analise_id": 1, "tipo_analise_id": 1, "nivel": null, "pontos": 2, "descricao": "Melhorar as vistas acessíveis à vizinhança, melhor distribuindo as superfícies de espaços de paisagismo e a visibilidade em relação ao existente, solucionando e vegetalizando as construções e diminuindo, eventualmente, as sombras"},
+      {"id": 4, "categorias_analise_id": 1, "tipo_analise_id": 1, "nivel": "B", "pontos": null, "descricao": "Explicitar, em cada categoria, como a análise do local foi aproveitada e como permitiu hierarquizar as categorias."},
+      {"id": 5, "categorias_analise_id": 1, "tipo_analise_id": 2, "nivel": "B", "pontos": null, "descricao": "Incluir no plano de massa elementos que permitam criar um ambiente agradável"},
+      {"id": 6, "categorias_analise_id": 1, "tipo_analise_id": 3, "nivel": "B", "pontos": null, "descricao": "Realizar um inventário dos modos de transporte existentes nas proximidades do empreendimento (bicicletas, pedestres, transporte público, etc.)."},
+      {"id": 7, "categorias_analise_id": 1, "tipo_analise_id": 3, "nivel": null, "pontos": 1, "descricao": "Incluir, no plano de massa, elementos do projeto que permitam reduzir os impactos e/ou incômodos relacionados ao transporte"}
+    ],
+    "tipos_analises": [
+      {"id": 1, "categoria_analise_id": 1, "titulo_analise": "Análise do local do empreendimentos"},
+      {"id": 2, "categoria_analise_id": 1, "titulo_analise": "Organização do terreno de modo a criar um ambiente agradável"},
+      {"id": 3, "categoria_analise_id": 1, "titulo_analise": "Organização do terreno de modo a favorecer a ecomobilidade"}
+    ],
+    "categorias_analise": [
+      {"id": 1, "nome": "Categorias da Qualidade Ambiental do Edifício", "numero": 4}
+    ],
+    "gabarito": [
+      {"id": 1, "categoria_analise_id": 1, "titulo_avaliacao": "Nivel B", "descricao": "Respeito ao nível BASE"},
+      {"id": 2, "categoria_analise_id": 1, "titulo_avaliacao": "Nivel BP", "descricao": "Respeito ao nível BASE E Soma dos pontos >= 1"},
+      {"id": 3, "categoria_analise_id": 1, "titulo_avaliacao": "Nivel MP", "descricao": "Respeito ao nível BASE E Soma dos pontos >= 3"}
+    ]
+  }
+  
