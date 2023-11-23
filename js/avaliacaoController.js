@@ -32,58 +32,42 @@ const calcularAvaliacao = (idEmpreendimento, idCategoria) => {
 };
 
 const registrarAvaliacao = (idEmpreendimento, idCategoria, avaliacoes) => {
-  let novasAvaliacoes = [];
-  let proximoIdSum = 1;
-
   const dadosAvaliacao = database.getEntidade("avaliacao");
   const dadosCriterios = database.getEntidade("criterios");
+  let registrosCount = dadosAvaliacao.length + 1;
 
-  const arrAvaliacoes = dadosAvaliacao?.filter(
-    ({ categorias_analise_id, empreendimento_id }) =>
-      categorias_analise_id !== idCategoria &&
-      empreendimento_id !== idEmpreendimento
+  const arrAvaliacao = dadosAvaliacao.filter(
+    ({ empreendimento_id, categorias_analise_id }) =>
+      empreendimento_id !== idEmpreendimento ||
+      categorias_analise_id !== idCategoria
   );
 
-  const criterios = dadosCriterios?.filter(
-    ({ categorias_analise_id }) => categorias_analise_id === idCategoria
-  );
-
-  avaliacoes.forEach((idCriterio) => {
-    let valor;
-    let proximoId = 0;
-    const result = criterios.find(({ id }) => id === idCriterio);
-    valor = result["nivel"] || result["pontos"];
-
-    if (arrAvaliacoes.length > 0) {
-      proximoId = arrAvaliacoes[arrAvaliacoes.length - 1]["id"] + proximoIdSum;
-    } else {
-      proximoId = proximoIdSum;
-    }
-
-    const novaAvaliacao = {
-      id: proximoId,
+  const novasAvaliacoes = avaliacoes.map((idCriterio) => {
+    let registro = {
+      id: registrosCount,
       empreendimento_id: idEmpreendimento,
       categorias_analise_id: idCategoria,
       criterio_id: idCriterio,
       resultado_numerico: null,
       resultado_char: null,
-      data_avaliacao: new Date().toISOString().slice(0, 10),
     };
 
-    if (result["nivel"]) {
-      valor = result["nivel"];
-      novaAvaliacao.resultado_char = result["nivel"];
+    const valorCriterio = dadosCriterios.find(({ id }) => id === idCriterio);
+
+    if (valorCriterio.nivel) {
+      registro.resultado_char = valorCriterio.nivel;
     } else {
-      novaAvaliacao.resultado_numerico = result["pontos"];
+      registro.resultado_numerico = valorCriterio.pontos;
     }
 
-    novasAvaliacoes.push(novaAvaliacao);
-    proximoIdSum++;
+    registrosCount++;
+
+    return registro;
   });
 
-  arrAvaliacoes.push(...novasAvaliacoes);
+  arrAvaliacao.push(...novasAvaliacoes);
 
-  database.salvarAlteracoesEntidade("avaliacao", arrAvaliacoes);
+  database.salvarAlteracoesEntidade("avaliacao", arrAvaliacao);
 };
 
 export default {
